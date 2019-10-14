@@ -38,7 +38,6 @@ ALTER TABLE reservation ADD CONSTRAINT reservation_room FOREIGN KEY reservation_
 ALTER TABLE reservation ADD CONSTRAINT reservation_user FOREIGN KEY reservation_user (user_login)
     REFERENCES user (login);
 
-INSERT INTO user (login,name,surname,password) VALUES('MaciejM','Maciej','Mitura','password'),('UlaP','Ula','Pieta','password'),('PatrykG','Patrykk','Gorka','password');
-INSERT INTO room (name,location,phone,projector,seats) VALUES('salka1','1st floor','123123123',true,100),('salka2','1st floor','123123123',true,100),('salka3',null,null,true,100);
-INSERT INTO room (name,location,seats) VALUES('salka4','2st floor',30);
-INSERT INTO reservation (user_login,room_name,starts,ends) VALUES('MaciejM','salka1','2019-10-13 12:30:0','2019-10-13 13:30:0');
+INSERT INTO user (login,name,surname,password) VALUES('jsmith','John','Smith','qwerty'),('jdoe','Jane','Doe','mySecret');
+INSERT INTO room (name,location,phone,projector,seats) VALUES('Large Room','1st floor','22-22-22-22',true,10),('Medium Room','1st floor','',true,6),('Small Room','2nd floor','',false,4);
+

@@ -4,6 +4,7 @@ import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,19 +16,23 @@ public class Reservation {
     @Column(name = "reservation_id")
     private int id;
 
+    @NotNull
     @Column(name = "starts")
     private LocalDateTime starts;
 
+    @NotNull
     @Column(name = "ends")
     private LocalDateTime ends;
 
     @NotNull
     @NaturalId
+    @Size(max = 50)
     @Column(name = "user_login")
     private String user_login;
 
     @NotNull
     @NaturalId
+    @Size(max = 100)
     @Column(name = "room_name")
     private String room_name;
 
